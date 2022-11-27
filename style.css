@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,8 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    background-color: #f6f7fb;
+    font-family: 'Muli', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,49 +16,81 @@ body {
 }
 
 .container {
+    text-align: center;
+}
+
+.progress-container {
     display: flex;
-    width: 90vw;
-}
-
-.panel {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 80vh;
-    border-radius: 50px;
-    color: #fff;
-    cursor: pointer;
-    flex: 0.5;
-    margin: 10px;
+    justify-content: space-between;
+    margin-bottom: 30px;
     position: relative;
-    transition: flex 0.7s ease-in;
+    max-width: 100%;
+    width: 350px;
 }
 
-.panel h3 {
-    font-size: 24px;
+.progress-container::before {
+    content: '';
+    background-color: #e0e0e0;
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    margin: 0;
-    opacity: 0;
-    font-weight: 400;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: -1;
 }
 
-.panel.active {
-    flex: 5;
+.progress {
+    background-color: #3498db;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 0%;
+    z-index: -1;
+    transition: 0.4s ease;
 }
 
-.panel.active h3 {
-    opacity: 1;
-    transition: opacity 0.3s ease-in 0.4s;
+.circle {
+    background-color: #fff;
+    color: #999;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #e0e0e0;
+    transition: 0.4s ease;
 }
 
-@media (max-width: 480px) {
-    .container {
-        width: 100vw;
-    }
-    .panel:nth-of-type(4),
-    .panel:nth-of-type(5) {
-        display: none;
-    }
+.circle.active {
+    border-color: #3498db;
 }
+
+.btn {
+    background-color: #3498db;
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 8px 30px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
+

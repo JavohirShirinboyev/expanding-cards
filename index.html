@@ -5,25 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>Expanding Cards</title>
+    <title>Progress Steps</title>
 </head>
 <body>
     <div class="container">
-        <div class="panel active" style="background-image: url('https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
-            <h3>Explore The World</h3>
+        <div class="progress-container">
+            <div class="progress" id="progress"></div>
+            <div class="circle active">1</div>
+            <div class="circle">2</div>
+            <div class="circle">3</div>
+            <div class="circle">4</div>
         </div>
-        <div class="panel" style="background-image: url('https://images.pexels.com/photos/12040331/pexels-photo-12040331.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
-            <h3>Wild Forest</h3>
-        </div>
-        <div class="panel" style="background-image: url('https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
-            <h3>Sunny Beach</h3>
-        </div>
-        <div class="panel" style="background-image: url('https://images.pexels.com/photos/165537/pexels-photo-165537.jpeg');">
-            <h3>City on Winter</h3>
-        </div>
-        <div class="panel" style="background-image: url('https://images.pexels.com/photos/610293/pexels-photo-610293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
-            <h3>Mountains-Clouds</h3>
-        </div>
+        <button class="btn" id="prev" disabled>Prev</button>
+        <button class="btn" id="next">Next</button>
     </div>
     <script src="./main.js"></script>
 </body>
